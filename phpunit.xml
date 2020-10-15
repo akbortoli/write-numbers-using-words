@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         beStrictAboutTestsThatDoNotTestAnything="false"
+         bootstrap="./vendor/autoload.php"
          colors="true"
-         printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer">
-    <testsuites>
-        <testsuite name="Unit">
-            <directory>./tests/Unit</directory>
-        </testsuite>
-
-        <testsuite name="Feature">
-            <directory>./tests/Feature</directory>
-        </testsuite>
-    </testsuites>
-    <php>
-        <server name="APP_ENV" value="testing" />
-        <server name="BCRYPT_ROUNDS" value="4" />
-        <server name="BROADCAST_DRIVER" value="log" />
-        <server name="CACHE_DRIVER" value="array" />
-        <server name="DB_CONNECTION" value="sqlite" />
-        <server name="DB_DATABASE" value=":memory:" />
-        <server name="MAIL_MAILER" value="array" />
-        <server name="QUEUE_CONNECTION" value="sync" />
-        <server name="SESSION_DRIVER" value="array" />
-        <server name="TELESCOPE_ENABLED" value="false" />
-    </php>
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnError="true"
+         stopOnFailure="true"
+         verbose="true">
+<testsuites>
+    <testsuite name="">
+        <directory suffix=".php">./tests/</directory>
+    </testsuite>
+</testsuites>
+<filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+        <directory suffix=".php">./src</directory>
+    </whitelist>
+</filter>
 </phpunit>
